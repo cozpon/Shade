@@ -3,6 +3,8 @@ const router = express.Router();
 
 const db = require('../models');
 const User = db.user;
+const Message = db.message;
+const Status = db.status;
 
 router.get('/', (req, res) => {
   return User.findAll()

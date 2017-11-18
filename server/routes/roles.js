@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 const db = require('../models');
-const Status = db.status;
+const Role = db.role;
 
 router.get('/', (req, res) => {
-  return Status.findAll()
-  .then(statuses => {
-    return res.json(statuses);
+  return Role.findAll()
+  .then(roles => {
+    return res.json(roles);
   });
 });
 
