@@ -4,7 +4,8 @@ module.exports = function (sequelize, DataTypes) {
     points: {type: DataTypes.INTEGER, defaultValue: 0},
     emoji_id: {type: DataTypes.INTEGER, allowNull: false},
     status_id: {type: DataTypes.INTEGER, defaultValue: 1},
-    deletedAt: {type: DataTypes.DATEONLY, defaultValue: null}
+    deletedAt: {type: DataTypes.DATEONLY, defaultValue: null},
+    role_id: {type: DataTypes.INTEGER, defaultValue: 1}
   }, {
     tableName: 'users'
   });
@@ -25,6 +26,10 @@ module.exports = function (sequelize, DataTypes) {
     User.hasMany(models.message, {
       foreignKey: 'victim_id',
       as: 'victim'
+    });
+    User.belongsTo(models.role, {
+      foreignKey: 'role_id',
+      as: 'role'
     });
   }
 
