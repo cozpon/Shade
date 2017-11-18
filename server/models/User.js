@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const User = sequelize.define('User', {
+  const User = sequelize.define('user', {
     username: {type: DataTypes.STRING, allowNull: false},
     points: {type: DataTypes.INTEGER},
     emoji_id: {type: DataTypes.INTEGER},
@@ -9,13 +9,21 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   User.associate = function (models) {
-    User.belongsTo(models.Emoji, {
+    User.belongsTo(models.emoji, {
       foreignKey: 'emoji_id',
       as: 'emoji'
     });
-    User.belongsTo(models.Status, {
+    User.belongsTo(models.status, {
       foreignKey: 'status_id',
       as: 'status'
+    });
+    User.hasMany(models.message, {
+      foreignKey: 'shader_id',
+      as: 'shader'
+    });
+    User.hasMany(models.message, {
+      foreignKey: 'victim_id',
+      as: 'victim'
     });
   }
 

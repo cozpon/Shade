@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
-  const Message = sequelize.define('Message', {
+  const Message = sequelize.define('message', {
     body: {type: DataTypes.STRING},
     points: {type: DataTypes.INTEGER},
     media: {type: DataTypes.STRING},
@@ -12,15 +12,15 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Message.associate = function (models) {
-    Message.belongsTo(models.User, {
+    Message.belongsTo(models.user, {
       foreignKey: 'shader_id',
       as: 'shader'
     });
-    Message.belongsTo(models.User, {
+    Message.belongsTo(models.user, {
       foreignKey: 'victim_id',
       as: 'victim'
     });
-    Message.belongsTo(models.Status, {
+    Message.belongsTo(models.status, {
       foreignKey: 'status_id',
       as: 'status'
     });
