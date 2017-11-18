@@ -1,7 +1,10 @@
-import React from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { Animated, ScrollView, Image, Dimensions, StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
+
+export default class App extends Component {
+>>>>>>> development
+
   render() {
     return (
       <View style={styles.container}>
