@@ -47,7 +47,7 @@ router.get('/:id', (req, res) => {
       { model: Status, as: 'status'}
     ]
   })
-  .then(message => {
+  .then((message) => {
     return res.json(message);
   })
   .catch((err) => {
@@ -55,10 +55,52 @@ router.get('/:id', (req, res) => {
   });
 });
 
+router.put('/:id', (req, res) => {
+  let newInfo = req.body;
+  let id = req.params.id;
+  //note: newInfo coming in from axios should be an object whose keys match the columns in messages
+  return Message.findById(id)
+  .then((message) => {
+    if(parseInt(message.shader_id) === parseInt(req.user.id)){
+      return message.update(newInfo, {
+        returning: true,
+        plain: true
+      })
+      .then((message) => {
+        return Message.findById(id, {
+          include: [
+            { model: User, as: 'shader'},
+            { model: User, as: 'victim' },
+            { model: Status, as: 'status'}
+          ]
+        })
+        .then((foundMessage) => {
+          return res.json(foundMessage);
+        })
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    }
+  })
+});
+
 router.delete('/:id', (req, res) => {
   let id = req.params.id;
 
-
+  return Message.findById(id)
+  .then(message => {
+    return message.update({deletedAt : Date.now()}, {
+      returning: true,
+      plain: true
+    })
+    .then(message => {
+      return res.json(message);
+    })
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 });
 
 module.exports = router;
