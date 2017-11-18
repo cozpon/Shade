@@ -1,9 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define('user', {
     username: {type: DataTypes.STRING, allowNull: false},
-    points: {type: DataTypes.INTEGER},
-    emoji_id: {type: DataTypes.INTEGER},
-    status_id: {type: DataTypes.INTEGER}
+    points: {type: DataTypes.INTEGER, defaultValue: 0},
+    emoji_id: {type: DataTypes.INTEGER, allowNull: false},
+    status_id: {type: DataTypes.INTEGER, defaultValue: 1},
+    deletedAt: {type: DataTypes.DATEONLY, defaultValue: null}
   }, {
     tableName: 'users'
   });
