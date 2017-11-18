@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 const { StyleSheet, ListView, View, Text,
-        ActivityIndicator, Animated, ScrollView } = require('react-native');
+        ActivityIndicator, Animated, ScrollView, Image } = require('react-native');
 
 import { connect } from 'react-redux';
 
@@ -16,7 +16,7 @@ class Home extends Component {
 
 
   componentDidMount() {
-        this.props.getData(); //call our action
+        //this.props.getData(); //call our action
     }
 
 
@@ -27,11 +27,33 @@ class Home extends Component {
         <Text style={styles.paragraph}>
           Welcome to SHADE, the greatest app created by the Backyard Boiz
         </Text>
-        <Image style={styles.logo} source={require("../assets/logo.jpg")}/>
+        <Image style={styles.logo} source={require("../assets/logo.png")}/>
       </View>
     );
   };
 };
+
+
+// // The function takes data from the app current state,
+// // and insert/links it into the props of our component.
+// // This function makes Redux know that this component needs to be passed a piece of the state
+// function mapStateToProps(state, props) {
+//     return {
+//         loading: state.dataReducer.loading,
+//         data: state.dataReducer.data
+//     }
+// }
+
+// // Doing this merges our actions into the component’s props,
+// // while wrapping them in dispatch() so that they immediately dispatch an Action.
+// // Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators(Actions, dispatch);
+// }
+
+
+export default Home;
+
 
 const styles = StyleSheet.create({
   container: {
@@ -47,9 +69,7 @@ const styles = StyleSheet.create({
     color: '#ffb6c1',
   },
   logo: {
-    backgroundColor: "#ffffff",
-    height: 128,
-    width: 128,
+    justifyContent: 'center'
   }
 });
 
