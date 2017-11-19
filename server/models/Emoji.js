@@ -6,12 +6,5 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false
   });
 
-  Emoji.associate = function (models) {
-    Emoji.hasMany(models.user, {
-      foreignKey: 'emoji_id',
-      as: 'emoji'
-    });
-  }
-
   return Emoji;
 }

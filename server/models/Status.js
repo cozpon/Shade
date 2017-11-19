@@ -6,16 +6,5 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false
   });
 
-  Status.associate = function (models) {
-    Status.hasMany(models.user, {
-      foreignKey: 'status_id',
-      as: 'status'
-    });
-    Status.hasMany(models.message, {
-      foreignKey: 'status_id',
-      as: 'status'
-    });
-  }
-
   return Status;
 }
