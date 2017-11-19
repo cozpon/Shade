@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
     shader_id: {type: DataTypes.INTEGER, allowNull: false},
     victim_id: {type: DataTypes.INTEGER},
     status_id: {type: DataTypes.INTEGER, defaultValue: 1},
-    parent_id: {type: DataTypes.INTEGER}
+    parent_id: {type: DataTypes.INTEGER},
     deletedAt: {type: DataTypes.DATEONLY, defaultValue: null}
   }, {
     tableName: 'messages'
@@ -24,16 +24,16 @@ module.exports = function (sequelize, DataTypes) {
     });
     Message.belongsTo(models.status, {
       foreignKey: 'status_id',
-      as: 'status'
+      as: 'message_status'
     });
-    Message.belongsTo(models.message, {
-      foreignKey: 'parent_id',
-      as: 'parent'
-    });
-    Message.hasMany(models.message, {
-      foreignKey: 'parent_id',
-      as: 'parent'
-    });
+    // Message.belongsTo(models.message, {
+    //   foreignKey: 'parent_id',
+    //   as: 'parent'
+    // });
+    // Message.hasMany(models.message, {
+    //   foreignKey: 'parent_id',
+    //   as: 'parent'
+    // });
   }
 
   return Message;
