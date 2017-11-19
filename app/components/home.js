@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 
 import * as Actions from '../actions'; //Import your actions
 import Register from '../containers/register.js';
+import Login from '../containers/login.js';
 
 class Home extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Home extends Component {
           Welcome to SHADE, the greatest app created by the Backyard Boiz
         </Text>
         <Register />
+        <Login />
         <Image style={styles.logo} source={require("../assets/logo.png")}/>
       </ScrollView>
     );

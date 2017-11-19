@@ -20,10 +20,10 @@ const User = t.struct({
     terms: t.Boolean
 });
 
-
 class Register extends Component {
-  constructor(props){
-    super(props)
+  handleSubmit = () => {
+    const value = this._form.getValue();
+    console.log('value: ', value);
   }
 
 
@@ -31,7 +31,15 @@ class Register extends Component {
     return(
 
       <View style={styles.container}>
-        <Form type={User}/>
+        <Form
+          ref={c => this._form = c} //assign a ref
+          type={User}
+          options={options}
+        />
+        <Button
+          title="Throw Shade!"
+          onPress={this.handleSubmit}
+        />
       </View>
 
     );
@@ -40,22 +48,25 @@ class Register extends Component {
 
 export default Register;
 
+
+const options = {
+  fields: {
+    email: {
+      error: "Don't miss out on all this Shade! Enter an email to stay connected."
+    },
+    password: {
+      error: "Enter your super secret password and check if someone's throwing Shade!"
+    },
+    terms: {
+      label: 'Agree to Terms',
+    },
+  },
+};
+
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     marginTop: 50,
     padding: 20,
-    backgroundColor: '#ffb6c1',
   }
 });
-
-
-//Register with:
-  // Username
-  // Password (hashed)
-  // Email
-  // Emoji (menu to pick Emoji)
-
-//Login with:
-  //username
-  //password
