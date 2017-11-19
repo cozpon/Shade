@@ -5,16 +5,16 @@ module.exports = {
 
       return queryInterface.bulkInsert('emojis', [
       {
-        emoji:
+        emoji: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAac5k2OGFCXWJdvNLZa-ET3lVGbsfxpxuDbiQJ5PkLy19gRxz'
       },
       {
-        emoji:
+        emoji: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRFLEnSe7dd990GKkNQOYVoSOJt4qCyLOEw9difaNHXmQgRoRPCw'
       },
       {
-        emoji:
+        emoji: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3o2m3OjQdQhN_fhnR4VzWZ6tTQ4zBZjOz596uk9SNMQL8ffdFw'
       },
       {
-        emoji:
+        emoji: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ZOAlaAKOW8Gplg8ZOa8bb1ij0UPjXlD6yJ3rexOeVBPHcMFmlg'
       }], {});
 
   },
