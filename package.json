@@ -20,17 +20,24 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "array-flatten": "^2.1.1",
     "bcrypt": "^1.0.3",
+    "create-react-native-app": "^1.0.0",
     "expo": "^22.0.2",
     "express": "^4.16.2",
+    "finalhandler": "^1.1.0",
+    "merge-descriptors": "^1.0.1",
+    "path-to-regexp": "^2.1.0",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
     "react": "16.0.0-beta.5",
     "react-native": "^0.49.5",
+    "sequelize": "^4.22.8",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "sequelize": "^4.22.8"
+    "setprototypeof": "^1.1.0",
+    "utils-merge": "^1.0.1"
   },
   "description": "This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).",
   "author": "",

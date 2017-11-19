@@ -3,6 +3,7 @@ import { Animated, ScrollView, Image, Dimensions, StyleSheet, Text, View } from 
 import Home from './app/components/home' //Import the component file
 
 export default class App extends Component {
+
   render() {
     return (
       <View style={styles.container}>
