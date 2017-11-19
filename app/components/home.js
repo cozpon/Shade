@@ -24,13 +24,13 @@ class Home extends Component {
 
   render() {
     return(
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Text style={styles.paragraph}>
           Welcome to SHADE, the greatest app created by the Backyard Boiz
         </Text>
         <Register />
         <Image style={styles.logo} source={require("../assets/logo.png")}/>
-      </View>
+      </ScrollView>
     );
   };
 };
