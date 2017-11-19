@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     include:[
       { model: User, as: 'shader' },
       { model: User, as: 'victim' },
-      { model: Status, as: 'status' }
+      { model: Status, as: 'message_status' }
     ]
   })
   .then(messages => {
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
     include:[
       { model: User, as: 'shader' },
       { model: User, as: 'victim' },
-      { model: Status, as: 'status'}
+      { model: Status, as: 'message_status'}
     ]
   })
   .then((message) => {
@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
           include: [
             { model: User, as: 'shader'},
             { model: User, as: 'victim' },
-            { model: Status, as: 'status'}
+            { model: Status, as: 'message_status'}
           ]
         })
         .then((foundMessage) => {
