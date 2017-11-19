@@ -7,6 +7,7 @@ const { StyleSheet, ListView, View, Text,
 import { connect } from 'react-redux';
 
 import * as Actions from '../actions'; //Import your actions
+import Register from '../containers/register.js';
 
 class Home extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class Home extends Component {
         <Text style={styles.paragraph}>
           Welcome to SHADE, the greatest app created by the Backyard Boiz
         </Text>
+        <Register />
         <Image style={styles.logo} source={require("../assets/logo.png")}/>
       </View>
     );
