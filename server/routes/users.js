@@ -76,4 +76,16 @@ router.post('/', (req, res) => {
   });
 });
 
+router.post('/auth', (req, res) => {
+  return res.json('Authenticate and retrieve the access and refresh tokens in exchange of email/password');
+});
+
+router.post('/auth/refresh', (req, res) => {
+  return res.json('Authenticate and retriece the access token in exchange of the refresh token.');
+});
+
+router.post('/auth/revoke', (req, res) => {
+  return res.json('Log out, revoke access by destroying the user tokens');
+});
+
 module.exports = router;
