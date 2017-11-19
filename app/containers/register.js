@@ -20,45 +20,6 @@ const User = t.struct({
     terms: t.Boolean
 });
 
-const formStyles = {
-  ...Form.stylesheet,
-  formGroup: {
-    normal: {
-      marginBottom: 10
-    },
-  },
-  controlLabel: {
-    normal: {
-      color: 'blue',
-      fontSize: 18,
-      marginBottom: 7,
-      fontWeight: '600'
-    },
-    // the style applied when a validation error occours
-    error: {
-      color: 'red',
-      fontSize: 18,
-      marginBottom: 7,
-      fontWeight: '600'
-    }
-  }
-}
-
-const options = {
-  fields: {
-    email: {
-      error: "Don't miss out on all this Shade! Enter an email to stay connected."
-    },
-    password: {
-      error: "Enter your super secret password and check if someone's throwing Shade!"
-    },
-    terms: {
-      label: 'Agree to Terms',
-    },
-  },
-};
-
-
 class Register extends Component {
   handleSubmit = () => {
     const value = this._form.getValue();
@@ -87,6 +48,21 @@ class Register extends Component {
 
 export default Register;
 
+
+const options = {
+  fields: {
+    email: {
+      error: "Don't miss out on all this Shade! Enter an email to stay connected."
+    },
+    password: {
+      error: "Enter your super secret password and check if someone's throwing Shade!"
+    },
+    terms: {
+      label: 'Agree to Terms',
+    },
+  },
+};
+
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
@@ -94,14 +70,3 @@ const styles = StyleSheet.create({
     padding: 20,
   }
 });
-
-
-//Register with:
-  // Username
-  // Password (hashed)
-  // Email
-  // Emoji (menu to pick Emoji)
-
-//Login with:
-  //username
-  //password
